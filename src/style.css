@@ -27,3 +27,31 @@
   .hero .social { margin-bottom: 50px; }
   .hero .scroll { bottom: 22px; }
 }
+
+
+/* Definitive scroll-label layout fix: keep it in document flow. */
+.hero { min-width: 0; row-gap: 0; }
+.hero-copy { min-width: 0; }
+.hero .social { margin-bottom: 0; }
+.hero .scroll,
+.scroll {
+  position: static !important;
+  inset: auto !important;
+  grid-column: 1 / -1;
+  justify-self: start;
+  align-self: end;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 48px;
+  margin-bottom: 0;
+  padding: 0;
+  clear: both;
+}
+@media (max-width: 850px) {
+  .hero { padding-bottom: 60px; }
+  .hero .scroll, .scroll { margin-top: 42px; }
+}
+@media (max-width: 560px) {
+  .hero .social { gap: 16px; }
+  .hero .scroll, .scroll { margin-top: 36px; }
+}
